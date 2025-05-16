@@ -15,9 +15,14 @@
                 <div class="logo">
                     <img src="hireclap-logo-HD.webp" alt="Hireclap Logo" style="height: 48px; width: auto;">
                 </div>
+                <div class="contact-info subtle-contact">
+                    <a href="mailto:recruit@hireclap.com"><i class="fas fa-envelope"></i> recruit@hireclap.com</a>
+                    <span class="divider">|</span>
+                    <a href="tel:+919037156256"><i class="fas fa-phone"></i> +91 9037 156 256</a>
+                </div>
                 <div class="nav-links">
                     <a href="#" class="active">For Employers</a>
-                    <a href="#">Solutions</a>
+                    <a href="#recruitment-solutions">Solutions</a>
                     <a href="#">About Us</a>
                     <button class="cta-button nav-cta">Schedule Demo</button>
                 </div>
@@ -46,7 +51,7 @@
         </section>
     </div>
 
-    <section class="features">
+    <section class="features" id="recruitment-solutions">
         <div class="section-header">
             <h2>Recruitment Solutions</h2>
             <p class="section-subtitle">Advanced tools to accelerate your hiring</p>
@@ -148,5 +153,30 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      window.chatbaseConfig = {
+        chatbotId: "_ib1MVA726KKXn0CeIblO",
+        theme: {
+          primaryColor: '#4F46E5',
+          backgroundColor: '#ffffff',
+          textColor: '#1F2937',
+          fontFamily: 'Poppins, sans-serif'
+        }
+      };
+    </script>
+    <script>
+      (function(d, t) {
+        var s = d.createElement(t);
+        s.src = "https://chatbase.co/embed.min.js";
+        s.id = "chatbase-script";
+        s.defer = true;
+        s.onload = function() {
+          if (typeof window.chatbase !== 'undefined') {
+            window.chatbase.init();
+          }
+        };
+        d.body.appendChild(s);
+      })(document, "script");
+    </script>
 </body>
 </html> 

@@ -12,6 +12,7 @@ body, html {
     line-height: 1.6;
     color: #333;
     background: transparent !important;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -70,6 +71,77 @@ nav {
     background: #2563eb !important;
     color: #fff !important;
     border-color: #2563eb !important;
+}
+
+.nav-links .contact-info {
+    display: flex;
+    gap: 16px;
+    margin-right: 30px;
+}
+
+.nav-links .contact-info a {
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links .contact-info a:hover {
+    color: #2563eb;
+}
+
+.nav-links .contact-info i {
+    font-size: 0.9rem;
+    color: #2563eb;
+}
+
+.contact-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    transition: color 0.2s;
+}
+
+.contact-icon:hover,
+.contact-icon:focus {
+    color: #1e293b;
+}
+
+.contact-icon .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background: #1e293b;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 12px;
+    position: absolute;
+    z-index: 10;
+    bottom: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+}
+
+.contact-icon:hover .tooltip,
+.contact-icon:focus .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Hero Section */
@@ -612,4 +684,39 @@ footer {
 
 .hero-content, .feature-card, .stat-item {
     animation: fadeIn 1s ease-out;
+}
+
+.subtle-contact {
+    font-size: 0.95rem;
+    color: #64748b;
+    font-weight: 400;
+    margin-left: 32px;
+    margin-right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.subtle-contact a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.subtle-contact a:hover {
+    color: #2563eb;
+}
+
+.subtle-contact .divider {
+    color: #cbd5e1;
+    font-size: 1.1em;
+    margin: 0 6px;
+}
+
+.subtle-contact i {
+    font-size: 1em;
+    color: #cbd5e1;
 } 
