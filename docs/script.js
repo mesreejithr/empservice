@@ -48,8 +48,8 @@ document.querySelectorAll('.feature-card, .stat-item').forEach(element => {
 // Add click event listeners to CTA buttons
 document.querySelectorAll('.primary-button, .cta-button').forEach(button => {
     button.addEventListener('click', () => {
-        // Add your form or modal logic here
-        console.log('CTA button clicked');
+        // Open a modal or redirect to a demo scheduling page
+        window.location.href = 'https://calendly.com/hireclap/demo'; // Replace with your actual demo scheduling URL
     });
 });
 
