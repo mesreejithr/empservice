@@ -53,10 +53,100 @@ document.querySelectorAll('.primary-button, .cta-button').forEach(button => {
     });
 });
 
-// Mobile menu toggle (you can add this if you implement a mobile menu)
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
+// Mobile Menu Logic
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+// Create overlay element
+const overlay = document.createElement('div');
+overlay.className = 'mobile-menu-overlay';
+document.body.appendChild(overlay);
+
+function openMobileMenu() {
+    mobileMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+if (hamburgerMenu && mobileMenu && mobileMenuClose) {
+    hamburgerMenu.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Close menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+}
+
+// Contact Modal Logic for Mobile
+const contactIconMobile = document.getElementById('contactIconMobile');
+const contactModal = document.getElementById('contactModal');
+const closeContactModal = document.getElementById('closeContactModal');
+
+if (contactIconMobile && contactModal && closeContactModal) {
+    contactIconMobile.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        // Position the modal relative to the contact icon
+        const iconRect = contactIconMobile.getBoundingClientRect();
+        const modalContent = contactModal.querySelector('.contact-modal-content');
+        
+        // Set the modal position
+        contactModal.style.position = 'fixed';
+        contactModal.style.top = `${iconRect.bottom + window.scrollY}px`;
+        contactModal.style.right = `${window.innerWidth - iconRect.right}px`;
+        
+        // Show the modal
+        contactModal.style.display = 'block';
+        
+        // Add a small delay to trigger the animation
+        setTimeout(() => {
+            contactModal.classList.add('show');
+        }, 10);
+    });
+
+    function closeModal() {
+        contactModal.classList.remove('show');
+        // Wait for the fade-out animation to complete before hiding the modal
+        setTimeout(() => {
+            contactModal.style.display = 'none';
+        }, 200);
+    }
+
+    closeContactModal.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeModal();
+    });
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!contactModal.contains(event.target) && !contactIconMobile.contains(event.target)) {
+            closeModal();
+        }
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && contactModal.classList.contains('show')) {
+            closeModal();
+        }
+    });
 }
 
 // Add loading animation for images

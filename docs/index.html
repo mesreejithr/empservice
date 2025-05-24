@@ -251,16 +251,35 @@
             <div class="logo">
                 <img src="./hireclap-logo-HD.webp" alt="Hireclap Logo - India's #1 Fresher Recruitment Platform">
             </div>
-            <div class="contact-info subtle-contact">
+            <div class="contact-info subtle-contact contact-desktop">
                 <a href="mailto:recruit@hireclap.com"><i class="fas fa-envelope"></i> recruit@hireclap.com</a>
                 <span class="divider">|</span>
                 <a href="tel:+919037156256"><i class="fas fa-phone"></i> +91&nbsp;9037&nbsp;156&nbsp;256</a>
+            </div>
+            <div class="contact-icon contact-mobile" id="contactIconMobile">
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
             </div>
             <div class="nav-links">
                 <a href="#" class="active">For Employers</a>
                 <a href="#recruitment-solutions">Solutions</a>
                 <a href="#">About Us</a>
                 <button class="cta-button nav-cta">Schedule Demo</button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="mobile-menu-header" style="justify-content: flex-end;">
+                    <span class="mobile-menu-close" id="mobileMenuClose">&times;</span>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="#" class="active"><i class="fas fa-briefcase"></i>For Employers</a>
+                    <a href="#recruitment-solutions"><i class="fas fa-cogs"></i>Solutions</a>
+                    <a href="#"><i class="fas fa-info-circle"></i>About Us</a>
+                    <div class="menu-divider"></div>
+                    <button class="mobile-cta">Schedule Demo</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -408,14 +427,6 @@
         </section>
     </main>
 
-    <section class="contact" aria-label="Contact Information">
-        <h2>Need Help?</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> recruit@hireclap.com</p>
-            <p><i class="fas fa-phone"></i> +91&nbsp;9037&nbsp;156&nbsp;256</p>
-        </div>
-    </section>
-
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -442,31 +453,21 @@
         </div>
     </footer>
 
+    <!-- Contact Modal -->
+    <div id="contactModal" class="contact-modal">
+      <div class="contact-modal-content">
+        <span id="closeContactModal" class="contact-modal-close">&times;</span>
+        <h3 class="contact-modal-title">Contact Us</h3>
+        <a href="tel:+919037156256" class="contact-modal-link">
+          <i class="fas fa-phone"></i>
+          <span>+91 9037 156 256</span>
+        </a>
+        <a href="mailto:recruit@hireclap.com" class="contact-modal-link">
+          <i class="fas fa-envelope"></i>
+          <span>recruit@hireclap.com</span>
+        </a>
+      </div>
+    </div>
     <script src="script.js"></script>
-    <script>
-      window.chatbaseConfig = {
-        chatbotId: "_ib1MVA726KKXn0CeIblO",
-        theme: {
-          primaryColor: '#4F46E5',
-          backgroundColor: '#ffffff',
-          textColor: '#1F2937',
-          fontFamily: 'Poppins, sans-serif'
-        }
-      };
-    </script>
-    <script>
-      (function(d, t) {
-        var s = d.createElement(t);
-        s.src = "https://chatbase.co/embed.min.js";
-        s.id = "chatbase-script";
-        s.defer = true;
-        s.onload = function() {
-          if (typeof window.chatbase !== 'undefined') {
-            window.chatbase.init();
-          }
-        };
-        d.body.appendChild(s);
-      })(document, "script");
-    </script>
 </body>
 </html> 
