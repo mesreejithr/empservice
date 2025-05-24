@@ -60,10 +60,18 @@ function toggleMobileMenu() {
 }
 
 // Add loading animation for images
+// Updated to handle cached images as well
+
 document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('load', function() {
-        this.style.opacity = '1';
-    });
+    function showImage() {
+        img.style.opacity = '1';
+    }
     img.style.opacity = '0';
     img.style.transition = 'opacity 0.3s ease-in';
+    img.addEventListener('load', showImage);
+
+    // If the image is already loaded (from cache), show it immediately
+    if (img.complete) {
+        showImage();
+    }
 }); 
