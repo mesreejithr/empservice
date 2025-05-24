@@ -957,14 +957,16 @@ footer {
     top: 100px;
     left: 0;
     z-index: 10;
+    width: 100%;
 }
 
 .breadcrumb ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .breadcrumb li {
@@ -995,8 +997,11 @@ footer {
     .breadcrumb {
         padding: 0.5rem 5%;
         top: 90px;
+        font-size: 0.8rem;
     }
-    
+    .breadcrumb ol {
+        flex-wrap: wrap;
+    }
     .breadcrumb li {
         font-size: 0.8rem;
     }
