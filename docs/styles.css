@@ -162,9 +162,11 @@ nav {
 /* Hero Section */
 .hero-bg-wrap {
     position: relative;
-    width: 100vw;
-    min-height: 85vh;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
     overflow: hidden;
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
     margin-top: 80px;
 }
 
@@ -865,4 +867,137 @@ footer {
 .subtle-contact i {
     font-size: 1em;
     color: #cbd5e1;
+}
+
+/* FAQ Section Styles */
+.faq-section {
+    padding: 80px 20px;
+    background-color: #f8fafc;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.faq-item h3 {
+    color: #1a365d;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.faq-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 12px 0;
+}
+
+.faq-item ul li {
+    color: #4a5568;
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.faq-item ul li:before {
+    content: "•";
+    color: #4F46E5;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 40px 16px;
+    }
+    
+    .faq-item {
+        padding: 16px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.5rem 5%;
+    font-size: 0.85rem;
+    color: #ffffff;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: 10;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin: 0 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #60a5fa;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding: 0.5rem 5%;
+        top: 90px;
+    }
+    
+    .breadcrumb li {
+        font-size: 0.8rem;
+    }
 } 
